@@ -49,14 +49,14 @@ class Sozluk:
             print(f"{kelime} kelimesi için bilgiler:{self.sozluk[kelime]}")  
 
     def tanim_degistir(self):
-        kelime=input("Lutfen tanimini degistirmek istediginiz kelimeyi giriniz:")
-        kelime=kelime.capitalize()
-        tanim=input("Lutfen yeni tanimi giriniz:")
+        kelime = input("Lütfen tanımını değiştirmek istediğiniz kelimeyi giriniz:")
+        kelime = kelime.capitalize()
+        tanim = input("Lütfe yeni tanımı giriniz:")
         if kelime in self.sozluk:
              self.sozluk[kelime] = tanim
-             print("Kelimenin tanimi güncellendi.")
+             print("Kelimenin tanımı güncellendi.")
         else:
-             print("Aradiginiz kelime bulunamadi.Bu kelimeyi sozluge ekleyip yeni tanim olusturabilirsiniz.")
+             print("Aradığınız kelime bulunmadı.Bu kelimeyi sözlüğe ekleyip yeni tanım oluşturabilirsiniz.")
              self.sozluk[kelime] = tanim
              print("Kelime sözlüğe eklendi.")
         with open('proje.txt','w') as dosya:
@@ -64,7 +64,7 @@ class Sozluk:
                 dosya.write(f"{key1} : {self.sozluk[key1]}\n")
 
     def es_anlamli_kelime_ekle(self):
-        kelime = input("Lütfen eş anlamlısını öğrenmek istediğiniz kelimeyi giriniz.")
+        kelime = input("Lütfen eş anlamlısını öğrenmek istediğiniz kelimeyi giriniz:")
         kelime = kelime.capitalize()
         es_anlam = input("Lütfen öğrenmek istediğiniz kelimenin eş anlamını giriniz:")
         if kelime in self.sozluk:
@@ -74,7 +74,7 @@ class Sozluk:
             with open("es_anlamlilar.txt", "a") as f:
                  f.write(kelime + "," + es_anlam + "\n")
                  print("Yeni kelime ve eş anlamlısı dosyaya kaydedildi.")
-        self.sozluk[kelime] = [es_anlam]
+            self.sozluk[kelime] = [es_anlam]
         
             
     def kelimeyi_deftere_ekle(self):
@@ -99,8 +99,8 @@ def main():
     #sozluk.cumleEkle()
     #sozluk.yorumEkle()
     #sozluk.tanim_degistir()
-    #sozluk.es_anlamli_kelime_ekle()
+    sozluk.es_anlamli_kelime_ekle()
     #sozluk.kelime_defterini_goster()
-    sozluk.kelimeyi_deftere_ekle()
+    #sozluk.kelimeyi_deftere_ekle()
     
 main()
