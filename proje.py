@@ -54,17 +54,10 @@ class Sozluk:
             print("Kelime sozlukte bulunamadi!Kelimeyi sozluge eklemek isterseniz kelime ekle kisminda ekleyebilirsiniz.")
 
     def tanim_degistir(self):
-<<<<<<< HEAD
-        kelime = input("Lütfen tanımını değiştirmek istediğiniz kelimeyi giriniz:")
-        kelime = kelime.capitalize()
-        tanim = input("Lütfe yeni tanımı giriniz:")
-        if kelime in self.sozluk:
-=======
         kelime=input("Lutfen tanimini degistirmek istediginiz kelimeyi giriniz:")
         kelime=kelime.capitalize()
         tanim=input("Lutfen yeni tanimi giriniz:")
         if kelime in self.sozluk.keys():
->>>>>>> 9a98b26c9017bc6ff612f8268159e5de8fcc36b5
              self.sozluk[kelime] = tanim
              print("Kelimenin tanımı güncellendi.")
         else:
@@ -76,11 +69,7 @@ class Sozluk:
                 dosya.write(f"{key1}:{self.sozluk[key1]}\n")
 
     def es_anlamli_kelime_ekle(self):
-<<<<<<< HEAD
-        kelime = input("Lütfen eş anlamlısını öğrenmek istediğiniz kelimeyi giriniz:")
-=======
         kelime = input("Lütfen eş anlamlısını kaydetmek istediğiniz kelimeyi giriniz.")
->>>>>>> 9a98b26c9017bc6ff612f8268159e5de8fcc36b5
         kelime = kelime.capitalize()
         es_anlam = input("Lütfen kelimenin eş anlamlisini giriniz:")
         if kelime in self.sozluk:
@@ -90,10 +79,6 @@ class Sozluk:
             with open("es_anlamlilar.txt", "a") as f:
                  f.write("kelimemiz:"+kelime + " , " +"es anlamlisi:"+es_anlam + "\n")
                  print("Yeni kelime ve eş anlamlısı dosyaya kaydedildi.")
-<<<<<<< HEAD
-            self.sozluk[kelime] = [es_anlam]
-=======
->>>>>>> 9a98b26c9017bc6ff612f8268159e5de8fcc36b5
         
             
     def kelimeyi_deftere_ekle(self):
@@ -126,15 +111,6 @@ class Sozluk:
             
 def main():
     sozluk=Sozluk()
-<<<<<<< HEAD
-    #sozluk.kelime_bilgi_goster()
-    #sozluk.cumleEkle()
-    #sozluk.yorumEkle()
-    #sozluk.tanim_degistir()
-    sozluk.es_anlamli_kelime_ekle()
-    #sozluk.kelime_defterini_goster()
-    #sozluk.kelimeyi_deftere_ekle()
-=======
     print("""
     Sözlük
     1.Kelime ekleme
@@ -170,6 +146,5 @@ def main():
             sozluk.kelime_bilgi_goster()
         else:
             pass
->>>>>>> 9a98b26c9017bc6ff612f8268159e5de8fcc36b5
     
 main()
